@@ -9,4 +9,5 @@ Diseñar 2 layouts diferentes (Mobile y Escritorio). ---> Listo
  ● Seccióndefiltros de búsqueda ---> Listo 
  ● SecciónPrincipal ---> Listo 
  ● Piedepágina ---> Listo
- 
+
+ Si quieren ver el modelo una vez listo y desplegado : https://xllnakullx.github.io/Desafio-3-Ccs-Avanzado/
