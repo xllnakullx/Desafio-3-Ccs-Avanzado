@@ -1,0 +1,295 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+a {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+}
+
+html,
+body {
+font-family: 'Press Start 2P', cursive;
+  height: 100vh;
+  background: #4e05c4;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+nav {
+  background-color: #ffb6c1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+}
+.nav h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  }
+nav .toggle {
+  display: block;
+}
+
+nav .toggle span {
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+
+nav a img {
+  width: 120px;
+}
+
+nav ul li {
+  margin: 0.5rem 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #cc0617;
+  text-decoration: underline;
+}
+
+nav ul {
+  display: none;
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  background-color: #2de2e2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0.5rem 0;
+}
+
+.paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 1rem 0;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.item-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  justify-content: space-between;
+}
+
+.item-product img {
+  width: 80%;
+}
+
+.data-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.item-product .data-product p {
+  margin: 1rem 0;
+}
+
+.item-product .data-product button {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #f5f5f5;
+  color: #df0303;
+  border: 2px solid #9b0000;
+  cursor: pointer;
+}
+
+.item-product .data-product button:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: #4700ee;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.filter select {
+  width: 100%;
+  padding: 8px 16px;
+  border: 2px solid #93c5c8;
+  background-color: #ffffff;
+  color: #333;
+  font-size: 16px;
+  border-radius: 8px;
+  appearance: none;
+  outline: none;
+}
+.page-link {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #f4424b;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.page-link:hover {
+  background-color: #f0f0f0;
+}
+
+.paginator-container{
+  grid-area: paginator;
+}
+
+.page-link.active {
+  background-color: #4285f4;
+  color: white;
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  .products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    align-items: stretch;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'filter products'
+      'filter paginator';
+  }
+
+  .filter {
+    grid-area: filter;
+    padding: 1rem;
+    display: flex;
+    align-items: self-start;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .products {
+    grid-area: products;
+  }
+
+  nav .toggle {
+    display: none;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 0 1rem;
+  }
+}
+
+@media (min-width: 993px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: min-content minmax(60vh, 1fr) min-content;
+    grid-template-areas:
+      'header main'
+      'header main'
+      'footer main';
+    height: auto;
+  }
+  nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  nav .toggle {
+    display: none;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .filter {
+    grid-area: filter;
+    padding: 1rem;
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    align-items: stretch;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+}
